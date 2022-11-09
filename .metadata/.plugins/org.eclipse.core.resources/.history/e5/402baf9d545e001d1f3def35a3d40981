@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 내서버 or 다른서버(Content Network Delivery, CDN -->
+<link rel="stylesheet" href="css/out.css">
+<style type="text/css">
+	hr{
+	width: 300px;
+	size: 10px;
+	}
+</style>
+</head>
+<body>
+안녕하세요 <hr>
+</body>
+</html>
