@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"> 
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+//$ = body태그의 의미.
+	$(function() { //익명함수
+		
+		$('#b2').click(function() {
+			result2Tag = $('#result2')
+			result2Tag.append("<img src=img/1.png width = 50px height = 50px>")
+		})
+		//아이디가 b1인것을 클릭했을때, 이렇게 처리해줘!!
+		//document.getElementById('b1')
+		$('#b1').click(function() { //익명함수
+			//alert('b1버튼을 클릭하셨군요.')
+			site = $('#site').val()
+			
+			result2Tag = $('#result2')
+			
+			result2Tag.append(site + "<br>")
+			
+		})
+	})
+</script>
+</head>
+<body>
+	site : <input id='site'> 
+	<button id="b1">글자추가</button>	
+	<button id="b2">자동차추가</button>	
+	<div id='result2'></div>
+</body>
+</html>

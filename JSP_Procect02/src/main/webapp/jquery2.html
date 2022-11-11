@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+//$ = body태그의 의미.
+	$(function() { //익명함수
+		//아이디가 b1인것을 클릭했을때, 이렇게 처리해줘!!
+		//document.getElementById('b1')
+		$('#b1').click(function() { //익명함수
+			//alert('b1버튼을 클릭하셨군요.')
+			food = $('#food').val()
+			where = $('#where').val()
+			alert('당신이 먹고싶은 음식은 ' + food + '이고, 가고싶은 곳은 ' + where + '이군요!')
+		})
+	})
+</script>
+</head>
+<body>
+	food : <input id='food'><br> 
+	where : <input id='where'> <br>
+	<button id="b1">텍스트 출력</button>
+</body>
+</html>
