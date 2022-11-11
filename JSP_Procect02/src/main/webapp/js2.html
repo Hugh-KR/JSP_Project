@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function login(){
+		
+	//입력
+	//element(엘리먼트는 tag의 정식이름)
+	//getElementById 아이디로 테그를 찾아서 가지고옴.
+	id = document.getElementById('user').value
+	pw = document.getElementById('pw').value
+
+	//처리
+	if (id == 'root' && pw == '1234') {
+		alert('로그인성공')
+	} else {
+		alert('로그인실패')
+	}
+	
+	}
+	function age() {
+		year = document.getElementById('year').value //'2000'(입력값은 무조건 String)
+		age = 2022 - parseInt(year) //window.parseInt()
+		alert(age)
+	}
+	function rec() {
+		width = document.getElementById('w').value 
+		height = document.getElementById('h').value 
+		
+		alert(parseFloat(width) * parseFloat(height))
+	}
+</script>
+</head>
+<body>
+아이디 입력 : <input id='user'> <br>
+패스워드 입력 : <input id='pw' type="password"> <br>
+<button onclick="login()">로그인 처리</button>
+<br>
+나이 계산(태어난 연도) : <input id='year'> <br>
+<button onclick="age()">나이 계산 처리</button>
+<br>
+가로길이 : <input id='w'> <br>
+세로길이 : <input id='h'> <br>
+<button onclick="rec()">사각형의 면적구하기(실수입력)</button>
+</body>
+</html>
