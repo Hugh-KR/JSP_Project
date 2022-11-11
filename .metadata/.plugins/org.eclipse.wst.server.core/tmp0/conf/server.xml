@@ -152,7 +152,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="/Users/shinchanghyeok/Desktop/4학년_2학기/멀티캠퍼스/Java_DB/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/shinchanghyeok/Desktop/4학년_2학기/멀티캠퍼스/Java_DB/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JSP_Project" path="/JSP_Project" reloadable="true" source="org.eclipse.jst.jee.server:JSP_Project"/></Host>
+      <Context docBase="/Users/shinchanghyeok/Desktop/4학년_2학기/멀티캠퍼스/Java_DB/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/ROOT" path="" reloadable="false"/><Context docBase="/Users/shinchanghyeok/Desktop/4학년_2학기/멀티캠퍼스/Java_DB/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JSP_Project" path="/JSP_Project" reloadable="true" source="org.eclipse.jst.jee.server:JSP_Project"/><Context docBase="/Users/shinchanghyeok/Desktop/4학년_2학기/멀티캠퍼스/Java_DB/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/JSP_Procect02" path="/JSP_Procect02" reloadable="true" source="org.eclipse.jst.jee.server:JSP_Procect02"/></Host>
     </Engine>
   </Service>
 </Server>
