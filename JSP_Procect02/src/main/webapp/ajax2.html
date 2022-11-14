@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script>
+	$(function() { //익명함수
+		$('#b1').click(function() {
+			
+			$.ajax({
+				url : "data/rank.json",
+				success : function (x) {
+					alert("성공" + x)
+					$('#d1').html('성공, 받은 데이터는 ' + x + "<br>")
+					list = x.rank //find 결과가 여러개 = 배열
+					alert(list.length + "개")
+					for (i = 0; i < list.length; i++) {
+						n = list[i].name
+						t = list[i].tel
+						$('#d1').append(n + ", " + t + "<br>")
+					}
+				},
+				error : function(e) {
+					alert("실패" + e)
+				}
+			})
+		})//b1
+		
+		$('#b2').click(function() {
+			
+			$.ajax({
+				url : "data/rank3.xml",
+				success : function (x) {
+					alert("성공" + x)
+					$('#d2').html('성공, 받은 데이터는 ' + x + "<br>")
+					list = $(x).find('winner') //find 결과가 여러개 = 배열
+					alert(list.length + "개")
+					for (var i = 0; i < list.length; i++) {
+						year = $(list[i]).find("year").text()
+						ban = $(list[i]).find("class").text()
+						name = $(list[i]).find("name").text()
+						field = $(list[i]).find("field").text()
+						$('#d2').append(year + ", " + ban + name + field + "<br>")
+					}
+				},
+				error : function(e) {
+					alert("실패" + e)
+				}
+			})
+		})//b2
+		
+		$('#b3').click(function() {
+			
+			$.ajax({
+				url : "data/dataset.xml",
+				success : function (x) {
+					alert("성공" + x)
+					$('#d3').html('성공, 받은 데이터는 ' + x + "<br>")
+					list = $(x).find('record') //find 결과가 여러개 = 배열
+					alert(list.length + "개")
+					for (var i = 0; i < list.length; i++) {
+						id = $(list[i]).find("id").text()
+						first_name = $(list[i]).find("first_name").text()
+						email = $(list[i]).find("email").text()
+						gender = $(list[i]).find("gender").text()
+						ip_address = $(list[i]).find("ip_address").text()
+						address = $(list[i]).find("address").text()
+						$('#d3').append(id + ", " + first_name + email + gender + ip_address + address +"<br>")
+					}
+				},
+				error : function(e) {
+					alert("실패" + e)
+				}
+			})
+		})//b3
+	})
+</script>
+</head>
+
+<body>
+<!-- a태그는 호출하면 페이지가 순서대로 넘어가는 동기통신 -->
+<!-- <a href = "ok.html">공공데이터 포탈 요청</a>
+<a href = "tour.html">공공데이터 포탈 요청</a>
+<a href = "weather.html">공공데이터 포탈 요청</a> -->
+
+<button id="b1">XML받아오기</button>
+<button id="b2">XML받아오기2</button>
+<button id="b3">XML받아오기3</button>
+<button id="b4">JSON받아오기</button>
+<hr>
+<div id='d1'></div>
+<div id='d2'></div>
+<div id='d3'></div>
+<div id='d4'></div>
+</body>
+</html>

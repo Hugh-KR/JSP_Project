@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<script>
+	$(function() { //익명함수
+		$('#b1').click(function() {
+			
+			$.ajax({
+				url : "ok.html",
+				success : function (x) {
+					alert("성공" + x)
+					$('#d1').html('성공, 받은 데이터는 ' + x)
+				},
+				error : function(e) {
+					alert("실패" + e)
+				}
+			})
+		})//b1
+		$('#b2').click(function() {
+			
+			$.ajax({
+				url : "tour.html",
+				success : function (x) {
+					alert("성공" + x)
+					$('#d2').html('성공, 받은 데이터는 ' + x)
+				},
+				error : function(e) {
+					alert("실패" + e)
+				}
+			})
+		})//b2
+		$('#b3').click(function() {
+			
+			$.ajax({
+				url : "weather.html",
+				success : function (x) {
+					alert("성공" + x)
+					$('#d3').html('성공, 받은 데이터는 ' + x)
+				},
+				error : function(e) {
+					alert("실패" + e)
+				}
+			})
+		})//b3
+	})
+</script>
+</head>
+
+<body>
+<!-- a태그는 호출하면 페이지가 순서대로 넘어가는 동기통신 -->
+<!-- <a href = "ok.html">공공데이터 포탈 요청</a>
+<a href = "tour.html">공공데이터 포탈 요청</a>
+<a href = "weather.html">공공데이터 포탈 요청</a> -->
+
+<button id="b1">공공데이터 포탈 요청</button>
+<button id="b2">주변 맛집 정보 요청</button>
+<button id="b3">기상청 정보 요청</button>
+<hr>
+<div id='d1'></div>
+<div id='d2'></div>
+<div id='d3'></div>
+</body>
+</html>
