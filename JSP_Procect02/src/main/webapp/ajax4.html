@@ -8,37 +8,41 @@
 </script>
 <script type="text/javascript">
 	$(function() {
-		$('#b2').click(function() {
-			idValue = $('#id').val()
+		$('#b1').click(function() {
+			wonValue = $('#won').val()
 			//원하는 곳에서 아무때나 페이지를 넘기지 않고, 서버와
 			//통신하고자 하는 경우 ajax(비동기통신)
 			$.ajax({
-				url : 'idCheck.jsp',
+				url : 'won.jsp',
 				data : {
-					id : idValue
+					won : wonValue
 				},
 				success : function(x) { //x=jsp파일의 실행결과
 					alert('서버와의 통신 성공')
 					alert('응답받은 내용: ' + x)
-					$('div').html('<font color=red>응답받은 내용: ' + x + '</font>')
+					$('div').html('<font color=red>달러로 환산한 금액은: ' + x + '$</font>')
+				}
+			})
+		})//b1
+		
+		$('#b2').click(function() {
+			dollarValue = $('#dollar').val()
+			//원하는 곳에서 아무때나 페이지를 넘기지 않고, 서버와
+			//통신하고자 하는 경우 ajax(비동기통신)
+			$.ajax({
+				url : 'dollar.jsp',
+				data : {
+					dollar : dollarValue
+				},
+				success : function(x) { //x=jsp파일의 실행결과
+					alert('서버와의 통신 성공')
+					alert('응답받은 내용: ' + x)
+					$('div').html('<font color=red>원화로 환산한 금액은: ' + x + '원</font>')
 				}
 			})
 		})
 		
-		$('#b3').click(function() {
-			phoneValue = $('#phone').val()
-			//랜덤한 숫자 2자리를 만들어서 붙여줄 예정
-			$.ajax({
-				url : 'phone.jsp',
-				data : {
-					tel : phoneValue
-				},
-				success : function(x) { //x=jsp파일의 실행결과
-					alert('응답받은 내용: ' + x)
-					$('div').html('<font color=red>도착한 인증문자: ' + x + '</font>')
-				} //success
-			}) //ajax
-		}) //b3
+		
 	})
 </script>
 </head>
@@ -46,22 +50,13 @@
 	<h3>비동기통신으로 서버와 통신하기</h3>
 	<!--test에 입력한 id값을 서버에서 받아..id님 환영합니다.!!이라고
      div에 넣어보세요. test.jsp-->
-	결제금액 :
-	<input type="text" id="money">
-	<br> 1)계좌이체, 2)신용카드, 3)휴대폰결제
-	<br> 결제수단 :
-	<input type="text" id="choice">
-	<button style='color: blue; background: green' id='b1'>결제하기</button>
+	원화를 달러로 :
+	<input type="text" id="won">
+	<button style='color: blue; background: green' id='b1'>원화를 달러로</button>
 	<hr color="red">
-	회원가입할 id입력:
-	<input type="text" id='id'>
-	<button style='color: blue; background: yellow' id='b2'>회원가입시
-		id중복 체크</button>
-	<hr color="red">
-	인증받을 전화번호 입력:
-	<input type="text" id='phone'>
-	<button style='color: blue; background: fuchsia;' id='b3'>인증번호
-		받기</button>
+	달러를 원화로:
+	<input type="text" id='dollar'>
+	<button style='color: blue; background: yellow' id='b2'>달러를 원화로</button>
 	<hr color="green">
 	<div id="result"></div>
 </body>
