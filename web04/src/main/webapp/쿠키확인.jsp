@@ -5,7 +5,7 @@
     	for(Cookie c: cookies){
     		//out: 브라우저에 텍스트로 프린트하고자하는 경우
     		/* out.print(c.getName() + ", " + c.getValue() + "<br>"); */
-    		//쿠키의 이름이 age인 값만 프린트 해보세요.
+    		//쿠키의 이름이 age인 값만 프린트 해보세요
     		if(c.getName().equals("age")){
     			out.print(c.getValue());
     		}
