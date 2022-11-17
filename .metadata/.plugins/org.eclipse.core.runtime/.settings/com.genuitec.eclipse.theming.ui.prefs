@@ -1,9 +1,11 @@
 applyBackground=false
 approved.defs.file.last.changed.time=1649720987000
 configurationInstallLocation=/Applications/Eclipse.app/Contents/Eclipse/
+ct.upsell.display.after=1668966825792
 eclipse.preferences.version=1
 iconcolormode=primary
-last.download.attempt.time=1668575575903
-lastConfiguration=1668612336474
-newinstall=true
+last.download.attempt.time=1668658191804
+lastConfiguration=1668658339541
+newinstall=false
+showWelcomeDialog=false
 workbench.theme=Dark Gray
